@@ -24,7 +24,7 @@ jobs:
         run: npm install -i
 
       - name: Run local server
-        run: npm run tern-on-api
+        run: npm run tern-on-api & sleep 10
 
       - name: Install newman
         run: |
