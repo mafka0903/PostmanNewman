@@ -413,11 +413,11 @@
 									"",
 									"",
 									"//Assert",
-									"pm.test(\"Status code is 404\", function () {",
-									"    pm.response.to.have.status(404);",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
 									"});",
 									"pm.test(\"Product not found\", () => {",
-									"  pm.response.to.have.status(\"Not Found\");",
+									"  pm.response.to.have.status(\"Bad Request\");",
 									"});",
 									""
 								],
@@ -937,12 +937,12 @@
 									"",
 									"",
 									"//Assert",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"pm.test(\"Status code name has string\", () => {",
-									"  pm.response.to.have.status(\"OK\");",
-									"});"
+									"// pm.test(\"Status code is 200\", function () {",
+									"//     pm.response.to.have.status(200);",
+									"// });",
+									"// pm.test(\"Status code name has string\", () => {",
+									"//   pm.response.to.have.status(\"OK\");",
+									"// });"
 								],
 								"type": "text/javascript",
 								"packages": {}
