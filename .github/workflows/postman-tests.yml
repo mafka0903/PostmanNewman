@@ -28,6 +28,9 @@ jobs:
       - name: Make Directory for results
         run: mkdir -p testResults
 
+      - name: Run local server
+        run: npm run tern-on-api
+
       - name: Run API tests
         run: newman run store.postman_collection.json --environment testEnv.postman_environment.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme > testResults/runreport1.html
 
