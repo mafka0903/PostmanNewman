@@ -20,18 +20,18 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install newman
-        run: |
-          npm install -g wait-on
+      - name: Run local server
+        run: npm install -g wait-on
           npm run tern-on-api &
           wait-on http://localhost:3000
 
+      - name: Install newman
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+
       - name: Make Directory for results
         run: mkdir -p testResults
-
-      - name: Run local server
-        run: npm run tern-on-api &
-          wait-on http://localhost:3000
 
       - name: Run API tests
         run: newman run store.postman_collection.json --environment testEnv.postman_environment.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme > testResults/runreport1.html
